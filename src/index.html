@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Generador de Excusas Vanilla.js</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -14,16 +14,35 @@
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+      <p>The Excuse Generator</p>
+      <p id="excuse"></p>
     </div>
+
+    <script>
+      let who = ["The dog", "My grandma", "His turtle", "My bird"];
+      let action = ["ate", "peed", "crushed", "broke"];
+      let what = ["my homework", "the keys", "the car"];
+      let when = [
+        "before the class",
+        "right on time",
+        "when I finished",
+        "during my lunch",
+        "while I was praying"
+      ];
+
+      indexWho = Math.floor(Math.random() * who.length);
+      indexAction = Math.floor(Math.random() * action.length);
+      indexWhat = Math.floor(Math.random() * what.length);
+      indexWhen = Math.floor(Math.random() * when.length);
+
+      document.getElementById("excuse").innerHTML =
+        who[indexWho] +
+        " " +
+        action[indexAction] +
+        " " +
+        what[indexWhat] +
+        " " +
+        when[indexWhen];
+    </script>
   </body>
 </html>
